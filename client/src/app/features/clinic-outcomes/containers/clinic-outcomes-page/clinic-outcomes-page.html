@@ -1,0 +1,44 @@
+<section class="wrapper">
+  <header class="co-header">
+    <h1>Clinic Outcomes</h1>
+    <div class="co-actions">
+      <app-period-selector></app-period-selector>
+      <button class="btn btn-outline" type="button">Print</button>
+    </div>
+  </header>
+
+  <app-summary-bar></app-summary-bar>
+
+  <div class="grid">
+    <div class="card">
+      <header class="card-header">
+        <h2>Time in range</h2>
+        <button class="icon-info" aria-label="tooltip">i</button>
+      </header>
+
+      <app-time-in-range-chart></app-time-in-range-chart>
+
+      <footer class="legend">
+        <span class="units">mg/dL</span>
+      </footer>
+    </div>
+
+    <div class="card">
+      <header class="card-header">
+        <h2>Glucose Management Indicator (GMI)</h2>
+      </header>
+
+      <div class="gmi-wrap">
+        <div class="gmi-avg">
+          <div class="gmi-label">AVERAGE GMI</div>
+          <div class="gmi-value">6.7<span class="unit">%</span></div>
+        </div>
+        <app-gmi-chart></app-gmi-chart>
+      </div>
+
+      <footer class="legend">
+        <span class="units">GMI(%)</span>
+      </footer>
+    </div>
+  </div>
+</section>
