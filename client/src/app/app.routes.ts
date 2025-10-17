@@ -3,9 +3,6 @@ import { ClinicOutcomesPage } from './features/clinic-outcomes/containers/clinic
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'clinic-outcomes' },
-  {
-    path: 'clinic-outcomes',
-    loadComponent: () => ClinicOutcomesPage
-  },
+  { path: 'clinic-outcomes', component: ClinicOutcomesPage },
   { path: '**', redirectTo: 'clinic-outcomes' }
 ];

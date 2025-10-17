@@ -1,0 +1,41 @@
+.seg {
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid blue;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.seg-btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: blue;
+  font-weight: 550;
+  font-size: 14px;
+  padding: 8px 22px;
+  cursor: pointer;
+  position: relative;
+  transition: background .15s ease, color .15s ease;
+}
+
+.seg-btn + .seg-btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: blue;
+  opacity: .8;
+}
+
+.seg-btn.is-active {
+  background: blue;
+  color: white;
+}
+
+.seg-btn:focus-visible {
+  outline: 2px solid #93C5FD;
+  outline-offset: 2px;
+}
