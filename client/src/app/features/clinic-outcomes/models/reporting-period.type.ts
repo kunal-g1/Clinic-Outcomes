@@ -1,0 +1,1 @@
+export type ReportingPeriod = 30 | 60 | 90;
