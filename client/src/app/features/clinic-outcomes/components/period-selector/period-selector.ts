@@ -1,7 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-
-export type ReportingPeriod = 30 | 60 | 90;
-
+import { ReportingPeriod } from '../../models/reporting-period.type';
 @Component({
   selector: 'app-period-selector',
   imports: [],

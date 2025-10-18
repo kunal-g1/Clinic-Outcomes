@@ -24,7 +24,13 @@
     </button>
   </div>
 
-  <app-summary-bar></app-summary-bar>
+  <app-summary-bar
+  [activePatients]="selActive()"
+  [period]="selPeriod()"
+  [start]="selRange().start"
+  [end]="selRange().end"
+  [lastUpdated]="selLastUpdated()"
+  ></app-summary-bar>
 
   <div class="grid">
     <div class="card">
