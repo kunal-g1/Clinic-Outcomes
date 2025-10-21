@@ -112,3 +112,59 @@
   color: #666;
   font-size: 12px;
 }
+
+/* TIR scale legend */
+.tir-scale {
+  width: 400px;
+  max-width: 100%;
+  margin: 10px auto 0;
+  text-align: center;
+}
+
+.tir-scale .ticks {
+  display: flex;
+  justify-content: space-between;
+  color: #555;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.tir-scale .bars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 6px 0 4px;
+}
+
+.tir-scale .seg {
+  display: block;
+  height: 14px;
+  flex: 1
+}
+
+.tir-scale .seg.red {
+  background: #f06b6b;
+}
+
+.tir-scale .seg.red.hatch {
+  background: repeating-linear-gradient(135deg, #f06b6b 0 3px, transparent 3px 5px);
+}
+
+.tir-scale .seg.green {
+  background: #7bd77b;
+}
+
+.tir-scale .seg.yellow.hatch {
+  background: repeating-linear-gradient(135deg, #ffd67a 0 3px, transparent 3px 5px);
+}
+
+.tir-scale .seg.orange {
+  background: #ff9f5a;
+}
+
+.tir-scale .units {
+  color: #666;
+  font-size: 14px;
+  margin-top: 4px;
+  margin-left: 0;
+}

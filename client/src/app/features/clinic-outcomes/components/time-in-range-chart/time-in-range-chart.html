@@ -1,1 +1,16 @@
-<p>Time in Range Bar Chart</p>
+@if (series().length) {
+<apx-chart
+  [series]="series()"
+  [chart]="chart"
+  [legend]="legend"
+  [stroke]="stroke"
+  [plotOptions]="plotOptions"
+  [xaxis]="xaxis"
+  [yaxis]="yaxis"
+  [grid]="grid"
+  [dataLabels]="dataLabels"
+  [fill]="fill"
+  [tooltip]="tooltip"
+>
+</apx-chart>
+}

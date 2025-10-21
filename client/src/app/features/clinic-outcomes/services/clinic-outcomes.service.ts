@@ -6,19 +6,19 @@ import { Gmi } from '../models/gmi.model';
 
 @Injectable({ providedIn: 'root' })
 export class ClinicOutcomesService {
-  /** Simulate HTTP A: Time in Range percentages */
+  /** Simulate HTTP A: Time in Range */
   getTimeInRange(period: ReportingPeriod): Observable<TimeInRange> {
     const tir: TimeInRange = {
-      veryLow: 2,    // <54
-      low: 15,       // 54–70
+      veryLow: 0,    // <54
+      low: 2,       // 54–70
       inRange: 82,   // 70–180
-      high: 1,       // 180–240
-      veryHigh: 0,   // >240
+      high: 15,       // 180–240
+      veryHigh: 1,   // >240
     };
     return of(tir).pipe(delay(400));
   }
 
-  /** Simulate HTTP B: GMI summary */
+  /** Simulate HTTP B: GMI */
   getGmi(period: ReportingPeriod): Observable<Gmi> {
     const gmi: Gmi = {
       average: 6.7,

@@ -25,11 +25,11 @@
   </div>
 
   <app-summary-bar
-  [activePatients]="selActive()"
-  [period]="selPeriod()"
-  [start]="selRange().start"
-  [end]="selRange().end"
-  [lastUpdated]="selLastUpdated()"
+    [activePatients]="selActive()"
+    [period]="selPeriod()"
+    [start]="selRange().start"
+    [end]="selRange().end"
+    [lastUpdated]="selLastUpdated()"
   ></app-summary-bar>
 
   <div class="grid">
@@ -39,10 +39,23 @@
         <button class="icon-info" aria-label="tooltip">i</button>
       </header>
 
-      <app-time-in-range-chart></app-time-in-range-chart>
+      <app-time-in-range-chart [data]="selTir()"></app-time-in-range-chart>
 
-      <footer class="legend">
-        <span class="units">mg/dL</span>
+      <footer class="tir-scale">
+        <div class="ticks">
+          <span>40</span><span>54</span><span>70</span> <span>180</span><span>240</span
+          ><span>400</span>
+        </div>
+
+        <div class="bars">
+          <i class="seg red"></i>
+          <i class="seg red hatch"></i>
+          <i class="seg green"></i>
+          <i class="seg yellow hatch"></i>
+          <i class="seg orange"></i>
+        </div>
+
+        <div class="units">mg/dL</div>
       </footer>
     </div>
 
@@ -54,9 +67,9 @@
       <div class="gmi-wrap">
         <div class="gmi-avg">
           <div class="gmi-label">AVERAGE GMI</div>
-          <div class="gmi-value">6.7<span class="unit">%</span></div>
+          <div class="gmi-value">{{ selGmi()?.average ?? '—' }}<span class="unit">%</span></div>
         </div>
-        <app-gmi-chart></app-gmi-chart>
+        <app-gmi-chart [data]="selGmi()"></app-gmi-chart>
       </div>
 
       <footer class="legend">
