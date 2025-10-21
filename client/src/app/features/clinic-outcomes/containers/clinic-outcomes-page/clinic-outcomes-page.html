@@ -64,16 +64,20 @@
         <h2>Glucose Management Indicator (GMI)</h2>
       </header>
 
-      <div class="gmi-wrap">
-        <div class="gmi-avg">
-          <div class="gmi-label">AVERAGE GMI</div>
-          <div class="gmi-value">{{ selGmi()?.average ?? '—' }}<span class="unit">%</span></div>
-        </div>
-        <app-gmi-chart [data]="selGmi()"></app-gmi-chart>
+      <div class="gmi-avg">
+        <div class="gmi-label">AVERAGE GMI</div>
+        <div class="gmi-value">{{ selGmi()?.average ?? '—' }}<span class="unit">%</span></div>
       </div>
+      <app-gmi-chart [data]="selGmi()"></app-gmi-chart>
 
-      <footer class="legend">
-        <span class="units">GMI(%)</span>
+      <footer class="gmi-scale">
+        <div class="gmi-ticks"><span>≤7%</span><span>7–8%</span><span>≥8%</span></div>
+        <div class="bars">
+          <i class="seg green"></i>
+          <i class="seg yellow"></i>
+          <i class="seg red"></i>
+        </div>
+        <div class="units">GMI(%)</div>
       </footer>
     </div>
   </div>

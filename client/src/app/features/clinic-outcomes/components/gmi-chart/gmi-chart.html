@@ -1,1 +1,12 @@
-<p>Gmi Pie Chart</p>
+@if (series().length) {
+<apx-chart
+  [series]="series()"
+  [chart]="chart"
+  [stroke]="stroke"
+  [dataLabels]="dataLabels"
+  [plotOptions]="plotOptions"
+  [legend]="legend"
+  [fill]="fill"
+>
+</apx-chart>
+}
