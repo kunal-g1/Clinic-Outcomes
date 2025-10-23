@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { delay, Observable, of } from 'rxjs';
 import { ReportingPeriod } from '../models/reporting-period.type';
 import { TimeInRange } from '../models/tir.model';
@@ -6,16 +7,13 @@ import { Gmi } from '../models/gmi.model';
 
 @Injectable({ providedIn: 'root' })
 export class ClinicOutcomesService {
+  constructor(private http: HttpClient) {}
+
   /** Simulate HTTP A: Time in Range */
   getTimeInRange(period: ReportingPeriod): Observable<TimeInRange> {
-    const tir: TimeInRange = {
-      veryLow: 0,    // <54
-      low: 2,       // 54–70
-      inRange: 82,   // 70–180
-      high: 15,       // 180–240
-      veryHigh: 1,   // >240
-    };
-    return of(tir).pipe(delay(400));
+    return this.http
+      .get<TimeInRange>(`assets/mock/outcomes/getTIR${period}.json`)
+      .pipe(delay(400));
   }
 
   /** Simulate HTTP B: GMI */

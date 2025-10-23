@@ -1,0 +1,7 @@
+{
+    "veryLow": 5,
+    "low": 10,
+    "inRange": 15,
+    "high": 30,
+    "veryHigh": 40
+}
