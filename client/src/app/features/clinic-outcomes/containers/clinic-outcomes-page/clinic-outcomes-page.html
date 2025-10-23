@@ -36,7 +36,14 @@
     <div class="card">
       <header class="card-header">
         <h2>Time in range</h2>
-        <button class="icon-info" aria-label="tooltip">i</button>
+        <div class="info-tip">
+          <button class="icon-info" aria-label="More info">i</button>
+
+          <!-- bubble -->
+          <div class="tip-bubble" role="tooltip">
+            Based on standard of care ranges for Time in range.
+          </div>
+        </div>
       </header>
 
       <app-time-in-range-chart [data]="selTir()"></app-time-in-range-chart>
